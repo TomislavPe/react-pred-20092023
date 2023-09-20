@@ -22,25 +22,23 @@ function App() {
         });
     };
 
-    const handleChangeName = (event) => {
-        const tempUsers = [...users];
-        const newUser = tempUsers.find((user) => user.id === event.target.index);
-        console.log(newUser)
-        const newUsers = [...tempUsers, newUser];
+    const handleChangeName = (event, index) => {
+        const newUsers = [...users];
+        newUsers[index].name = event.target.value;
         setUsers(newUsers);
     };
 
     return (
         <>
             <h1>Liste</h1>
-            {users.map((user) => {
+            {users.map((user, index) => {
                 return (
                     <UserFunction
                         key={user.id}
                         id={user.id}
                         name={user.name}
                         years={user.years}
-                        changeName={handleChangeName}
+                        changeName={(event)=> handleChangeName(event,index)}
                     />
                 );
             })}
