@@ -24,8 +24,9 @@ function App() {
 
     const handleChangeName = (event) => {
         const tempUsers = [...users];
-        const newUser = tempUsers.find(user => user.id === event.target.key);
-        const newUsers =[...tempUsers, newUser]
+        const newUser = tempUsers.find((user) => user.id === event.target.index);
+        console.log(newUser)
+        const newUsers = [...tempUsers, newUser];
         setUsers(newUsers);
     };
 
@@ -43,8 +44,9 @@ function App() {
                     />
                 );
             })}
-
-            <button onClick={uvecajGodine}>Uvecaj godine</button>
+            <div>
+                <button onClick={uvecajGodine}>Uvecaj godine</button>
+            </div>
         </>
     );
 }
