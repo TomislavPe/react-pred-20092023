@@ -1,10 +1,13 @@
-export default function UserClass({ name, years, changeName }) {
+export default function UserFunction({id, name, years, changeName }) {
     return (
         <>
             <p>
                 Pozdrav, moje ime je {name} i imam {years} godina
             </p>
-            <input type="text" value={name} onChange={changeName} />
+            <label htmlFor="nameText">Upiši novo ime: </label>
+            <input id="nameText" key={id} type="text" value={name} onChange={changeName} />
+            <br />
+            <br />
         </>
     );
 }
