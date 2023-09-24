@@ -22,11 +22,10 @@ function App() {
         });
     };
 
-    const handleChangeName = (event) => {
+    const handleChangeName = (event, index) => {
         const tempUsers = [...users];
-        const newUser = tempUsers.find((user) => user.id == event.target.id);
+        const newUser = tempUsers.find((user) => user.id == index);
         newUser.name = event.target.value;
-        console.log(newUser)
         setUsers(tempUsers);
     };
 
