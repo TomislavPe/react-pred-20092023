@@ -5,7 +5,7 @@ export default function UserFunction({id, name, years, changeName }) {
                 Pozdrav, moje ime je {name} i imam {years} godina
             </p>
             <label htmlFor="nameText">Upiši novo ime: </label>
-            <input id="nameText" index={id} type="text" value={name} onChange={changeName} />
+            <input id={id} type="text" value={name} onChange={changeName} />
             <br />
             <br />
         </>

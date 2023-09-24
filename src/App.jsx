@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { UserClass, UserFunction, UserChildren } from "./user";
+import { UserFunction } from "./user";
 
 function App() {
     const initialUsers = [
@@ -24,10 +24,10 @@ function App() {
 
     const handleChangeName = (event) => {
         const tempUsers = [...users];
-        const newUser = tempUsers.find((user) => user.id === event.target.index);
+        const newUser = tempUsers.find((user) => user.id == event.target.id);
+        newUser.name = event.target.value;
         console.log(newUser)
-        const newUsers = [...tempUsers, newUser];
-        setUsers(newUsers);
+        setUsers(tempUsers);
     };
 
     return (
